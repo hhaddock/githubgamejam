@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Chars/testPlayer1.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Gun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,10 +42,6 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-
-[node name="Gun" parent="Sprite" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 41.3694, -17.2011 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

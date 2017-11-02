@@ -14,7 +14,6 @@ var velocity = Vector2()
 
 var canJump = false
 var jumpTimer = 0
-var facingLeft = false
 
 func _ready():
 	set_fixed_process(true)
@@ -24,6 +23,7 @@ func _fixed_process(delta):
 	playerMovement(delta)
 
 func playerMovement(delta):
+	print(get_node("/root/global").get_facing_left())
 	velocity += GRAVITY * delta
 	jumpTimer += delta
 	
@@ -38,11 +38,11 @@ func playerMovement(delta):
 	var movement = 0
 	if(Input.is_action_pressed("ui_left")):
 		movement -= 1
+		get_node("/root/global").set_facing_left(true)
 		set_scale(Vector2(-1,1))
-		facingLeft = true
 	if(Input.is_action_pressed("ui_right")):
 		movement += 1
-		facingLeft = false
+		get_node("/root/global").set_facing_left(false)
 		set_scale(Vector2(1,1))
 	movement *= MOVE_SPEED
 	velocity.x = lerp(velocity.x, movement, ACCELERATION)
