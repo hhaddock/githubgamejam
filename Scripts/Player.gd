@@ -23,7 +23,6 @@ func _fixed_process(delta):
 	playerMovement(delta)
 
 func playerMovement(delta):
-	print(get_node("/root/global").get_facing_left())
 	velocity += GRAVITY * delta
 	jumpTimer += delta
 	
